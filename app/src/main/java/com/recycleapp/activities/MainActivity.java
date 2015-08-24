@@ -29,6 +29,31 @@ public class MainActivity extends AppCompatActivity {
         initializition();
         loadData();
         displayItems();
+        onTouchFunction();
+    }
+
+    private void onTouchFunction() {
+        SwipeableRecyclerViewTouchListener swipeTouchListener =
+                new SwipeableRecyclerViewTouchListener(R_view,
+                        new SwipeableRecyclerViewTouchListener.SwipeListener()
+                        {
+
+                            @Override
+                            public boolean canSwipe(int position) {
+                                return true;
+                            }
+
+                            @Override
+                            public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
+
+                            }
+
+                            @Override
+                            public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
+
+                            }
+                        });
+        R_view.addOnItemTouchListener(swipeTouchListener);
 
     }
 
