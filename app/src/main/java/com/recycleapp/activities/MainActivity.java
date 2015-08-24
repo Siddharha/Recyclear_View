@@ -45,13 +45,22 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
-
+                                for (int position : reverseSortedPositions) {
+                                    list.remove(position);
+                                    myAdapter.notifyItemRemoved(position);
+                                }
+                                myAdapter.notifyDataSetChanged();
                             }
 
                             @Override
                             public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
-
+                                for (int position : reverseSortedPositions) {
+                                    list.remove(position);
+                                    myAdapter.notifyItemRemoved(position);
+                                }
+                                myAdapter.notifyDataSetChanged();
                             }
+
                         });
         R_view.addOnItemTouchListener(swipeTouchListener);
 
