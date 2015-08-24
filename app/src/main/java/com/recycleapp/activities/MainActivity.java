@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             item.setPhone_number("9732533406 " + i);
             list.add(item);
         }
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
