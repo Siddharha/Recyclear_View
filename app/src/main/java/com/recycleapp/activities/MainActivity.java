@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
     List<Items> list;
     MyRecyclerAdapter myAdapter;
     RecyclerView R_view;
-
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
+        setSupportActionBar(toolbar);
         initializition();
         loadData();
         displayItems();
@@ -65,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         R_view.addOnItemTouchListener(swipeTouchListener);
 
     }
-
 
     private void displayItems() {
 
